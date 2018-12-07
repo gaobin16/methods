@@ -18,18 +18,9 @@
       <ul class="layui-nav layui-nav-tree"  lay-filter="test">
         <li class="layui-nav-item layui-nav-itemed">
           <a class="" href="./view/html/list.html" target="iframe">html</a>
-          <!--<dl class="layui-nav-child">-->
-            <!--<dd><a href="./view/html/p.html" target="iframe">html</a></dd>-->
-            <!--<dd><a href="./view/html/gr.html" target="iframe">rt</a></dd>-->
-            <!--<dd><a href="javascript:;">列表三</a></dd>-->
-            <!--<dd><a href="">超链接</a></dd>-->
-          <!--</dl>-->
         </li>
         <li class="layui-nav-item">
-          <a href="javascript:;">javascript</a>
-          <dl class="layui-nav-child">
-            <dd><a href="./view/js/jsList.html" target="iframe">列表一</a></dd>
-          </dl>
+          <a href="./view/js/jsList.html" target="iframe">javascript</a>
         </li>
         <li class="layui-nav-item"><a href="./view/css/cssList.html" target="iframe">css</a></li>
         <li class="layui-nav-item">
@@ -44,9 +35,13 @@
 
   <div class="layui-body">
     <!-- 内容主体区域 -->
-    <div style="padding: 15px;width: 100%">
-      <iframe src="" frameborder="0" name="iframe" width="100%"></iframe>
+    <div style="padding: 15px;width: 100%;height: 100%; box-sizing: border-box;">
+      <iframe src="" frameborder="0" name="iframe" width="100%" height="100%"></iframe>
     </div>
+  </div>
+  <div class="layui-footer">
+    <!-- 底部固定区域 -->
+    © https://gaobin16.github.io/methods/index.html - 底部固定区域
   </div>
 </div>
 <script src="./lib/layui/layui.all.js"></script>

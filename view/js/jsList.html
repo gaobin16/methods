@@ -2,9 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>js</title>
+  <link rel="stylesheet" href="../../lib/layui/css/layui.css">
+
 </head>
 <body>
- this is js
+<h1>js</h1>
+<div id="view" style="width: 100%"></div>
+
+
+
+<script src="../../lib/layui/layui.all.js"></script>
+<script src="../../lib/jquery.js"></script>
+<script id="list" type="text/html">
+
+  {{# layui.each(d.content, function(index, item){ }}
+
+  <h2 style="margin: 10px 0">{{item.title}}</h2>
+  <a style="margin-bottom: 20px " href={{item.path}} target="iframe">{{item.decs}}</a>
+  {{#  }) }}
+
+</script>
+
+<script>
+  $.get('../../../mock/jsList.json',function (data) {
+
+    var laytpl = layui.laytpl;
+    var getTpl = list.innerHTML
+      ,view = document.getElementById('view');
+    laytpl(getTpl).render(data, function(html){
+      view.innerHTML = html;
+    });
+  })
+
+
+</script>
+
 </body>
 </html>

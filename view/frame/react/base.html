@@ -1,14 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%;">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>react</title>
   <link rel="stylesheet" href="../../../lib/layui/css/layui.css">
-
+  <link rel="stylesheet" href="../../style/detail.css">
 </head>
 <body>
-thisis
+<div  class="content">
 
+  <h1 class="h1">react 基础</h1>
+
+  <pre class="layui-code" lay-title="react" lay-height="" lay-skin="" lay-encode="">
+
+  function Welcome(props) {
+    return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;;
+  }
+
+  const element = <Welcome name="Sara"/>;
+  ReactDOM.render(
+    element,
+    document.getElementById('root')
+  );
+
+  </pre>
+
+  <h2>警告：</h2>
+  <ul class="wran">
+    <li>组件名称总是以大写字母开始。</li>
+    <li>举例来说, &lt;div /&gt; 代表一个 DOM 标签，而 &lt;Welcome /&gt; 则代表一个组件，并且需要在作用域中有一个 Welcome 组件。</li>
+  </ul>
+
+  <h2>生命周期：</h2>
+  <ul>
+    <li>componentDidMount() 钩子在组件输出被渲染到 DOM 之后运行。</li>
+    <li>componentWillUnmount() 生命周期方法是组件从 DOM 中移除之后运行</li>
+  </ul>
+
+  <h2>正确地使用 State(状态)</h2>
+  <ul>
+    <li>不要直接修改 state(状态)</li>
+    <li>state(状态) 更新可能是异步的</li>
+    <li>state(状态)更新会被合并</li>
+  </ul>
+  <pre>
+    // 正确
+    this.setState((state, props) => ({
+      counter: state.counter + props.increment
+    }));
+    // 正确
+    this.setState(function(state, props) {
+      return {
+        counter: state.counter + props.increment
+      };
+    });
+  </pre>
+</div>
 
 
 <script src="../../../lib/layui/layui.all.js"></script>
@@ -17,8 +64,12 @@ thisis
 <script>
 
 
-
 </script>
+<script>
+  layui.use('code', function(){
 
+    layui.code(); //实际使用时，执行该方法即可。而此处注释是因为修饰器在别的js中已经执行过了
+  });
+</script>
 </body>
 </html>
