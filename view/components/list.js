@@ -2,8 +2,8 @@
 
   {{# layui.each(d.content, function(index, item){ }}
 
-<h3>{{item.title}}</h3>
-<a href={{item.path}} target="_blank">{{item.decs}}</a>
+<h2 style="margin: 10px 0">{{item.title}}</h2>
+<a style="margin-bottom: 20px " href={{item.path}} target="_blank">{{item.decs}}</a>
 {{#  }) }}
 
 </script>
